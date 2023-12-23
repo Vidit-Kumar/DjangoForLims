@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Page</title>
+
+    <script>
+        function checkoutBook(bookId) {
+
+            const requestBody = {
+                book_id: bookId
+            };
+
+            fetch('/api/checkout/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}', // Include CSRF token if using Django's CSRF protection
+                },
+                body: JSON.stringify(requestBody),
+            })
+            .then(response => response.json())
+            .then(data => {
+                
+                if (data.success) {
+                    //const button = document.querySelector(`button[data-book-id="${bookId}"]`);
+                    //const row = button.closest('tr');
+                    //row.querySelector('td:nth-child(5)').textContent = 'No'; // Assuming status is updated in the 5th column
+                    //button.remove(); 
+                    location.reload();                                        
+                } else {
+                    alert(`Checkout failed: ${data.message}`);
+                }
+            })
+            .catch(error => {
+                console.error('Error during checkout:', error);
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Library Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Publisher</th>
+                <th>Author</th>
+                <th>Title</th>
+                <th>In Stock</th>
+                <th>Action</th>
+                <!-- Add other fields as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for library in libraries %}
+            <tr>
+                <td>{{ library.id }}</td>
+                <td>{{ library.publisher }}</td>
+                <td>{{ library.author }}</td>
+                <td>{{ library.title }}</td>
+                <td>{% if library.is_in_stock %} Yes {% else %} No {% endif %}</td>
+                <td>{% if library.is_in_stock %}
+                        <button onclick="checkoutBook({{ library.id }})">Checkout</button>
+                    {% endif %}
+                </td>
+                <!-- Add other fields as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+</body>
+</html>

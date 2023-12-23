@@ -1,0 +1,9 @@
+# .gitignore
+
+# Database
+db.sqlite3
+
+# Local development settings
+local_settings.py
+
+.vscode

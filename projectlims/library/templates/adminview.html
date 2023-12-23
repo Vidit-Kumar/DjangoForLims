@@ -1,0 +1,38 @@
+<!-- library/admin_user_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin User Page</title>
+</head>
+<body>
+    <h1>Admin User Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>IsAdmin</th>
+                <th>Last Login</th>
+                <th>Joined Date</th>
+                <!-- Add other fields as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.is_superuser}}</td>
+                <td>{{ user.last_login}}</td>
+                <td>{{ user.date_joined}}</td>
+                <!-- Add other fields as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
