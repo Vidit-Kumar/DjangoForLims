@@ -22,17 +22,17 @@
 3. Install package for custome environment
    >py -m pip install -r requirements.txt
 
-7 Navigate to \DjangoForLims\projectlims folder
+4. Navigate to \DjangoForLims\projectlims folder
 
-8. Initialize migrate  > 
-   py manage.py makemigrations library
-   py manage.py migrate
+5. Initialize migrate
 
-9.py manage.py runserver
+   >py manage.py makemigrations library
+   
+   >py manage.py migrate
 
-   On running server first time 
+6. On running server first time 
      
-     a).200 records will be added in db
+     a) 200 records will be added in db
      
      b) Two users will be provisioned with new accounts.
    
