@@ -15,7 +15,7 @@
   > git clone  https://github.com/Vidit-Kumar/DjangoForLims.git
 
 2. Goto folder "DjangoForLims and create virtual environment
-   > py -m venv <envname> ; 
+   > py -m venv yourenvnamehere
    > <envname>\Scripts\activate.bat
     It will prompt envirnment folder as (envname) C:\Users\Your Name>
 
