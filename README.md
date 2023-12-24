@@ -31,21 +31,30 @@
 9.py manage.py runserver
 
    On running server first time 
+     
      a).200 records will be added in db
+     
      b) Two users will be provisioned with new accounts.
-          userid= lims_user; pwd=lims   (Normal user)
-	  userid= lims_admin; pwd=admin (Admin user)
+   
+		userid= lims_user; pwd=lims   **(Normal user)**
+	  
+   		userid= lims_admin; pwd=admin **(Admin user**)
 
 
-Api interfaces
+**URI INTERFACES**
 
- 	http://127.0.0.1:8000/books/
-        http://127.0.0.1:8000/adminview/ [user datamodel] (**pending access to admin only)
+	http://127.0.0.1:8000/books/
+  
+	http://127.0.0.1:8000/adminview/ [user datamodel] **(NOTE: pending access to admin only)**
 
-REST API
-	http://127.0.0.1:8000/api/books/	
+
+**REST API**
+	
+ 	http://127.0.0.1:8000/api/books/	
+
 	http://127.0.0.1:8000/api/books/?Limit=10
-	http://127.0.0.1:8000/api/checkout/
+
+ 	http://127.0.0.1:8000/api/checkout/
 	{
 	 "book_id":20
 	} 
