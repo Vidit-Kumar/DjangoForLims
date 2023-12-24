@@ -17,7 +17,7 @@
 2. Goto folder "DjangoForLims and create virtual environment
    > py -m venv yourenvnamehere
    
-   > yourenvnamehere>\Scripts\activate.bat
+   yourenvnamehere>\Scripts\activate.bat
     It will prompt envirnment folder as (envname) C:\Users\Your Name>
 
 3. Install package for custome environment
