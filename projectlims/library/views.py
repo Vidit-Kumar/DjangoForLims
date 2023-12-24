@@ -13,8 +13,10 @@ from django.contrib.auth.models import User
 
 class BookView(viewsets.ModelViewSet):
     serializer_class = BookSerializer
-    queryset = Library.objects.all()
+   
+    
     def get_queryset(self):
+        queryset = Library.objects.all()
         limit = self.request.query_params.get('limit', None)
         if limit is not None:
             try:

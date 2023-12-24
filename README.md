@@ -19,17 +19,33 @@
    > <envname>\Scripts\activate.bat
     It will prompt envirnment folder as (envname) C:\Users\Your Name>
 
-3. Install django for custome environment
-   >py -m pip install Django
-
-Install packages 
-
-4. py -m pip install Faker
-5  py -m pip install django-rest-framework
-6  py -m pip install djangorestframework
+3. Install package for custome environment
+   >py -m pip install -r requirements.txt
 
 7 Navigate to \DjangoForLims\projectlims folder
 
-8. Initialize migrate  > py manage.py migrate
+8. Initialize migrate  > 
+   py manage.py makemigrations library
+   py manage.py migrate
 
 9.py manage.py runserver
+
+   On running server first time 
+     a).200 records will be added in db
+     b) Two users will be provisioned with new accounts.
+          userid= lims_user; pwd=lims   (Normal user)
+	  userid= lims_admin; pwd=admin (Admin user)
+
+
+Api interfaces
+
+ 	http://127.0.0.1:8000/books/
+        http://127.0.0.1:8000/adminview/ [user datamodel] (**pending access to admin only)
+
+REST API
+	http://127.0.0.1:8000/api/books/	
+	http://127.0.0.1:8000/api/books/?Limit=10
+	http://127.0.0.1:8000/api/checkout/
+	{
+	 "book_id":20
+	} 
