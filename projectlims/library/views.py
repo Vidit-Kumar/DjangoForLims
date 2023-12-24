@@ -7,6 +7,7 @@ from .serializers import BookSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import action
 import random
+import sys
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -48,6 +49,8 @@ def library(request):
 fake = Faker()
 
 def populate_library_data():
+    if  'makemigrations' in sys.argv or 'migrate' in sys.argv: 
+        return 
     if Library.objects.count() == 0:
         for _ in range(200):
             Library.objects.create(

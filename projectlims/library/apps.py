@@ -1,5 +1,5 @@
 from django.apps import AppConfig
-
+import sys
 
 class LibraryConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -7,6 +7,11 @@ class LibraryConfig(AppConfig):
 
     def ready(self):
         # Call your initialization function here
+        if 'makemigrations' in sys.argv or 'migrate' in sys.argv:            
+            return
+
+        # Your code to run on server start goes here
+        print("Executing code on server start...")
         from . import userrole
         userrole.remove_user('lims')
         #Regular user
