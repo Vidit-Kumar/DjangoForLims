@@ -18,7 +18,7 @@
    > py -m venv yourenvnamehere
    
    yourenvnamehere>\Scripts\activate.bat
-    It will prompt envirnment folder as (envname) C:\Users\Your Name>
+    (It will prompt envirnment folder as (envname) C:\Users\Your Name>)
 
 3. Install package for custome environment
    >py -m pip install -r requirements.txt
